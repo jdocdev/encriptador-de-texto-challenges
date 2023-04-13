@@ -161,7 +161,6 @@ p {
     overflow: auto;
     scrollbar-width: none;
     margin: 15px;
-    text-align: justify;
 }
 
 .main-container .encrypt-section .text-encrypt p::-webkit-scrollbar {
