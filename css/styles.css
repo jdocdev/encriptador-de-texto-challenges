@@ -44,7 +44,7 @@
 
 .main-container .encrypt-section .text-real .text-container textarea {
     width: 100%;
-    height: 100%;    
+    height: 100%;
     border: none;
     resize: none;
     outline: none;
@@ -60,7 +60,7 @@
     height: 20%;
     display: flex;
     flex-direction: column;
-    padding-left: 30px;   
+    padding-left: 30px;
     justify-content: center;
 }
 
@@ -106,10 +106,10 @@
     color: var(--white);
     margin-right: 12px;
 }
+
 .main-container .encrypt-section .text-real .container-buttons .buttons button:nth-child(1):hover {
     background-color: var(--ligth-blue);
     color: var(--dark-blue);
-    margin-right: 12px;
 }
 
 .main-container .encrypt-section .text-real .container-buttons .buttons button:nth-child(2) {
@@ -121,7 +121,6 @@
 .main-container .encrypt-section .text-real .container-buttons .buttons button:nth-child(2):hover {
     background-color: var(--dark-blue);
     color: var(--white);
-    margin-left: 12px;
 }
 
 /* Panel derecho */
@@ -159,27 +158,56 @@ p {
 .main-container .encrypt-section .text-encrypt p {
     font-size: 16px;
     font-weight: 400;
+    overflow: auto;
+    scrollbar-width: none;
+    margin: 15px;
+    text-align: justify;
 }
+
+.main-container .encrypt-section .text-encrypt p::-webkit-scrollbar {
+    width: 0;
+}
+
+.main-container .encrypt-section .text-encrypt button {
+    display: none;
+    width: 90%;
+    height: 67px;
+    border-radius: 24px;
+    border: solid 1px var(--dark-blue);
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: var(--ligth-blue);
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.main-container .encrypt-section .text-encrypt button:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
 
 @media screen and (max-width: 1040px) {
 
     .main-container {
         padding: 20px;
     }
-    
+
     .main-container .encrypt-section .text-real {
         width: 65%;
         margin-right: 20px;
     }
 
     .main-container .encrypt-section .text-real .container-buttons {
-        padding-left: 0;   
+        padding-left: 0;
         margin-bottom: 60px;
         align-items: center;
     }
 
     .main-container .encrypt-section .text-real .container-buttons .buttons button {
-        width: 200px;        
+        width: 200px;
     }
 
     .main-container .encrypt-section .text-encrypt {
@@ -198,13 +226,14 @@ p {
     .main-container .encrypt-section {
         flex-direction: column;
     }
-    
+
     .main-container .encrypt-section .text-real {
         width: 100%;
         height: 75%;
         margin-right: 10px;
     }
-    .main-container .encrypt-section .text-real .text-container textarea {       
+
+    .main-container .encrypt-section .text-real .text-container textarea {
         font-size: 24px;
     }
 
@@ -232,7 +261,7 @@ p {
 
     .main-container .encrypt-section .text-real .container-buttons .buttons {
         flex-direction: column;
-    }    
+    }
 
     .main-container .encrypt-section .text-real .container-buttons .buttons button {
         width: 328px;
@@ -243,6 +272,7 @@ p {
         margin-right: 0;
         margin-bottom: 24px;
     }
+
     .main-container .encrypt-section .text-real .container-buttons .buttons button:nth-child(2) {
         margin-left: 0;
     }
@@ -250,6 +280,6 @@ p {
     .main-container .encrypt-section .text-encrypt {
         height: 30%;
     }
-    
+
 
 }
