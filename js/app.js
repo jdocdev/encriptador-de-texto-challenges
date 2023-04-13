@@ -90,3 +90,37 @@ function desencriptarCampo() {
     document.querySelector("#textEncrypt").textContent = textoDesCifrado;
 }
 
+// Solo permitir letras minusculas
+const textBase = document.querySelector("#textBase");
+
+textBase.addEventListener("keydown", function (event) {
+    const key = event.key;
+    const charCode = event.keyCode || event.which;
+
+    // Si la tecla presionada es una letra mayúscula, convertirla a minúscula y permitir su ingreso en el campo
+    if (charCode >= 65 && charCode <= 90) {
+        const newKey = key.toLowerCase();
+        textBase.value += newKey;
+        event.preventDefault();
+    }
+
+    // Si la tecla presionada es una letra minúscula, permitir su ingreso en el campo
+    if (/^[a-z]+$/.test(key)) {
+        return true;
+    }
+
+    // permitir espacios en blanco
+    if (charCode == 32) { 
+        return true;
+    }
+
+    // permitir eliminación de texto
+    if (charCode == 8) { 
+        return true;
+    }
+
+    // Si la tecla presionada no es una letra prevenir su ingreso en el campo
+    event.preventDefault();
+});
+
+
