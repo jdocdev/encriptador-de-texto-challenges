@@ -46,14 +46,21 @@ function cifradoCesar(texto, desplazamiento) {
 // Función para encriptar el texto
 function encriptarCampo() {
 
-    // Eliminar la imagen
-    imgEncrypt.style.display = 'none';
-    // Eliminar el titulo
-    h3Encrypt.style.display = 'none';
-    // Mostrar botón de copiar
-    copyButton.style.display = 'block';
-
     const textBase = document.querySelector("#textBase").value;
+
+    //validación de formulario en blanco
+    if (textBase.trim() === "") {
+        alert("El campo de texto no puede estar en blanco");
+        return;
+    } else {
+        // Eliminar la imagen
+        imgEncrypt.style.display = 'none';
+        // Eliminar el titulo
+        h3Encrypt.style.display = 'none';
+        // Mostrar botón de copiar
+        copyButton.style.display = 'block';
+    }
+
     const desplazamiento = 19; // número de posiciones que se van a desplazar las letras en el alfabeto
     const textoCifrado = cifradoCesar(textBase, desplazamiento);
     document.querySelector("#textEncrypt").textContent = textoCifrado;
@@ -77,14 +84,22 @@ function descifradoCesar(textoCifrado, desplazamiento) {
 
 // Función para desencriptar el texto
 function desencriptarCampo() {
-    // Eliminar la imagen
-    imgEncrypt.style.display = 'none';
-    // Eliminar el titulo
-    h3Encrypt.style.display = 'none';
-    // Mostrar botón de copiar
-    copyButton.style.display = 'block';
 
     const textBase = document.querySelector("#textEncrypt").textContent;
+
+    //validación de formulario en blanco
+    if (textBase.trim() === "") {
+        alert("El campo de texto no puede estar en blanco");
+        return;
+    } else {
+        // Eliminar la imagen
+        imgEncrypt.style.display = 'none';
+        // Eliminar el titulo
+        h3Encrypt.style.display = 'none';
+        // Mostrar botón de copiar
+        copyButton.style.display = 'block';
+    }
+
     const desplazamiento = 19; // número de posiciones que se van a desplazar las letras en el alfabeto
     const textoDesCifrado = descifradoCesar(textBase, desplazamiento);
     document.querySelector("#textEncrypt").textContent = textoDesCifrado;
@@ -110,17 +125,29 @@ textBase.addEventListener("keydown", function (event) {
     }
 
     // permitir espacios en blanco
-    if (charCode == 32) { 
+    if (charCode == 32) {
         return true;
     }
 
     // permitir eliminación de texto
-    if (charCode == 8) { 
+    if (charCode == 8) {
+        return true;
+    }
+
+    // permitir suprimir
+    if (charCode == 46) {
+        return true;
+    }
+
+    // permitir uso de tecla Enter
+    if (charCode == 13) {
         return true;
     }
 
     // Si la tecla presionada no es una letra prevenir su ingreso en el campo
     event.preventDefault();
 });
+
+
 
 
