@@ -88,7 +88,7 @@ function desencriptarCampo() {
     const textBase = document.querySelector("#textEncrypt").textContent;
 
     //validación de formulario en blanco
-    if (textBase.trim() === "") {
+    if (textBase.trim() === "Ingresa el texto que desees encriptar o desencriptar.") {
         alert("El campo de texto no puede estar en blanco");
         return;
     } else {
